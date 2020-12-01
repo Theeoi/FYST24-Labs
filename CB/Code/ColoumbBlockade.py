@@ -50,38 +50,40 @@ yFit2 = Fit2(xFit2)
 
 plt.figure(figsize = (12,8))
 
-plt.title("Coloumb Blockade", fontsize = "xx-large")
+plt.title("Coloumb Blockade, $V_G$ = 3.08 V", fontsize = "xx-large")
 plt.xlabel("Source-Drain Voltage [mV]", fontsize = "x-large")
 plt.ylabel("Tunneling Current [pA]", fontsize = "x-large")
 
-plt.text(-5, 100, "$V_{G}$ = 3.08 V", fontsize = "x-large")
+plt.text(-2.5, -100, "slope = " + str(Fit1Param[0]), fontsize = "x-large")
 
 plt.xlim(voltage1[0] * 10**3, voltage1[-1] * 10**3)
 plt.ylim(current1[-1] * 10**12, current1[0] * 10**12)
 
-plt.plot([v * 10**3 for v in voltage1],[i * 10**12 for i in current1])
-plt.plot([x * 10**3 for x in xFit1], [y * 10**12 for y in yFit1])
+plt.plot([v * 10**3 for v in voltage1],[i * 10**12 for i in current1], label='Measured Data')
+plt.plot([x * 10**3 for x in xFit1], [y * 10**12 for y in yFit1], label='Linear Fit')
 plt.gca().invert_xaxis()
+plt.legend(fontsize="x-large")
 #plt.show()
-#plt.savefig('../Fig/ColoumbBlockade_Block.png')
+plt.savefig('../Fig/ColoumbBlockade_Block.png')
 
 #Plotting non-Blockade
 
 plt.figure(figsize = (12,8))
 
-plt.title("Coloumb non-Blockade", fontsize = "xx-large")
+plt.title("Coloumb non-Blockade, $V_G$ = 3.16 V ", fontsize = "xx-large")
 plt.xlabel("Source-Drain Voltage [mV]", fontsize = "x-large")
 plt.ylabel("Tunneling Current [pA]", fontsize = "x-large")
 
-plt.text(-5, 200, "$V_{G}$ = 3.16 V", fontsize = "x-large")
+plt.text(2, 100, "slope = " + str(Fit2Param[0]), fontsize = "x-large")
 
 plt.xlim(voltage2[0] * 10**3, voltage2[-1] * 10**3)
 
-plt.plot([v * 10**3 for v in voltage2],[i * 10**12 for i in current2])
-plt.plot([x * 10**3 for x in xFit2], [y * 10**12 for y in yFit2])
+plt.plot([v * 10**3 for v in voltage2],[i * 10**12 for i in current2], label='Measured Data')
+plt.plot([x * 10**3 for x in xFit2], [y * 10**12 for y in yFit2], label='Linear Fit')
 plt.gca().invert_xaxis()
-plt.show()
-#plt.savefig('../Fig/ColoumbBlockade_nonBlock.png')
+plt.legend(fontsize="x-large")
+#plt.show()
+plt.savefig('../Fig/ColoumbBlockade_nonBlock.png')
 
 
 
