@@ -33,7 +33,7 @@ data2.close()
 sIndex1 = np.argmin(np.abs(np.array(voltage1) - 0.0075))
 Fit1Param = np.polyfit(voltage1[:sIndex1], current1[:sIndex1], 1)
 Fit1 = np.poly1d(Fit1Param)
-print("R1 = " + str(10**-6/Fit1Param[0]) + " MegaOhm")
+print("R1 = " + str(round(10**-6/Fit1Param[0], 2)) + " MegaOhm")
 
 xFit1 = np.linspace(voltage1[0], voltage1[-1], 50)
 yFit1 = Fit1(xFit1)
@@ -41,20 +41,21 @@ yFit1 = Fit1(xFit1)
 
 Fit2Param = np.polyfit(voltage2, current2, 1)
 Fit2 = np.poly1d(Fit2Param)
-print("R2 = " + str(10**-6/Fit2Param[0]) + " MegaOhm")
+print("R2 = " + str(round(10**-6/Fit2Param[0], 2)) + " MegaOhm")
 
 xFit2 = np.linspace(voltage2[0], voltage2[-1], 50)
 yFit2 = Fit2(xFit2)
 
 #Plotting Blockade
 
-plt.figure(figsize = (12,8))
+plt.figure(figsize = (9,6))
 
-plt.title("Coloumb Blockade, $V_G$ = 3.08 V", fontsize = "xx-large")
+plt.title("$V_G$ = 3.08 V", fontsize = "x-large")
 plt.xlabel("Source-Drain Voltage [mV]", fontsize = "x-large")
 plt.ylabel("Tunneling Current [pA]", fontsize = "x-large")
+plt.tick_params('both', labelsize="large")
 
-plt.text(-2.5, -100, "slope = " + str(Fit1Param[0]), fontsize = "x-large")
+plt.text(-1.5, -100, "slope = " + str(round(Fit1Param[0], 12)), fontsize = "x-large")
 
 plt.xlim(voltage1[0] * 10**3, voltage1[-1] * 10**3)
 plt.ylim(current1[-1] * 10**12, current1[0] * 10**12)
@@ -68,13 +69,14 @@ plt.savefig('../Fig/ColoumbBlockade_Block.png')
 
 #Plotting non-Blockade
 
-plt.figure(figsize = (12,8))
+plt.figure(figsize = (9,6))
 
-plt.title("Coloumb non-Blockade, $V_G$ = 3.16 V ", fontsize = "xx-large")
+plt.title("$V_G$ = 3.16 V ", fontsize = "x-large")
 plt.xlabel("Source-Drain Voltage [mV]", fontsize = "x-large")
 plt.ylabel("Tunneling Current [pA]", fontsize = "x-large")
+plt.tick_params('both', labelsize="large")
 
-plt.text(2, 100, "slope = " + str(Fit2Param[0]), fontsize = "x-large")
+plt.text(2, 100, "slope = " + str(round(Fit2Param[0], 12)), fontsize = "x-large")
 
 plt.xlim(voltage2[0] * 10**3, voltage2[-1] * 10**3)
 

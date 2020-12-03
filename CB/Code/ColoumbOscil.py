@@ -32,11 +32,12 @@ data2.close()
 
 #Plotting Full Oscillation scan
 
-plt.figure(figsize = (12,8))
+plt.figure(figsize = (9,6))
 
-plt.title("Coloumb Oscillations", fontsize = "xx-large")
+#plt.title("Coloumb Oscillations", fontsize = "xx-large")
 plt.xlabel("Gate Voltage [V]", fontsize = "x-large")
 plt.ylabel("Tunneling Current [pA]", fontsize = "x-large")
+plt.tick_params('both', labelsize="large")
 
 plt.text(2.3, 350, "$V_{SD}$ = 0.1 mV", fontsize = "x-large")
 
@@ -48,11 +49,12 @@ plt.savefig('../Fig/ColoumbOscillations_Full.png')
 
 #Plotting Oscillation Zoomin
 
-plt.figure(figsize = (12,8))
+plt.figure(figsize = (9,6))
 
-plt.title("Coloumb Oscillations", fontsize = "xx-large")
+#plt.title("Coloumb Oscillations", fontsize = "xx-large")
 plt.xlabel("Gate Voltage [V]", fontsize = "x-large")
 plt.ylabel("Tunneling Current [pA]", fontsize = "x-large")
+plt.tick_params('both', labelsize="large")
 
 plt.text(3.35, 30, "$V_{SD}$ = 0.05 mV", fontsize = "x-large")
 

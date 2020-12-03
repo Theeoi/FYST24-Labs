@@ -23,15 +23,19 @@ current = A[:,2:]
 
 #Plotting
 
-plt.figure(figsize = (12,8))
+plt.figure(figsize = (9,6))
 
-plt.title("Coloumb Diamonds", fontsize = "xx-large")
+#plt.title("Coloumb Diamonds", fontsize = "xx-large")
 plt.xlabel("Gate Voltage [V]", fontsize = "x-large")
 plt.ylabel("Source-Drain Voltage [mV]", fontsize = "x-large")
+plt.tick_params('both', labelsize="large")
 
-plt.pcolor(voltageG, voltageSD, current)
-plt.show()
-#plt.savefig('../Fig/ColoumbDiamonds.png')
+plt.pcolor(voltageG, [v * 10**3 for v in voltageSD], [i * 10**12 for i in current], cmap='RdBu', shading='auto')
+cb = plt.colorbar()
+cb.set_label("Current [pA]", fontsize = "x-large")
+cb.ax.tick_params('both', labelsize="large")
+#plt.show()
+plt.savefig('../Fig/ColoumbDiamonds.png')
 
 
 
