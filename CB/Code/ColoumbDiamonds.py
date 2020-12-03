@@ -7,13 +7,19 @@ import numpy as np
 data1 = open("../Data/group4_log5.txt",'r')
 data1Lines = data1.readlines()
 
-voltageSD = []
-current1 = []
+voltageG = np.array(data1Lines[0].split("\t")[2:], float)
+
+A = np.zeros((101, len(voltageG)+2))
+
+k = 0
 for line in data1Lines[2:]:
-    voltageSweep.append(float(line.split("\t")[1]))
-    current1.append(float(line.split("\t")[2]))
+    A[k] = np.array(line.split("\t"), float)
+    k += 1
 
 data1.close()
+
+voltageSD = A[:,1]
+current = A[:,2:]
 
 #Plotting
 
