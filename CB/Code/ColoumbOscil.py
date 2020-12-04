@@ -62,6 +62,10 @@ plt.xlim(voltage2[0], voltage2[-1])
 
 current2 = [statistics.mean(k) for k in zip(current2_forward, current2_backward)]
 plt.plot(voltage2,[i * 10**12 for i in current2])
+
+plt.plot([3.56, 3.68],[20, 20], marker='o')
+plt.text(3.58, 21, "$\Delta V_g$ = 0.12 V", fontsize = "x-large", rotation=60)
+
 #plt.show()
 plt.savefig('../Fig/ColoumbOscillations_Zoom.png')
 
