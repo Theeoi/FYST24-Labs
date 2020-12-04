@@ -37,6 +37,28 @@ cb.ax.tick_params('both', labelsize="large")
 #plt.show()
 plt.savefig('../Fig/ColoumbDiamonds.png')
 
+plt.figure(figsize = (7,9))
+
+plt.xlabel("Gate Voltage [V]", fontsize = "x-large")
+plt.ylabel("Source-Drain Voltage [mV]", fontsize = "x-large")
+plt.tick_params('both', labelsize="large")
+
+plt.xlim(3.55, 3.69)
+
+plt.plot([3.57, 3.67],[0,0], marker='o')
+plt.text(3.60, 0.25, "$\Delta V_g$ = 0.1 V", fontsize = "x-large")
+
+plt.plot([3.615, 3.615],[0, -6.5], marker='o')
+plt.text(3.618, -5, "$\Delta V_{sd}$ = 6.5 mV", fontsize = "x-large", rotation=90)
+
+plt.pcolor(voltageG, [v * 10**3 for v in voltageSD], [i * 10**12 for i in current], cmap='RdBu', shading='auto')
+cb = plt.colorbar()
+cb.set_label("Current [pA]", fontsize = "x-large")
+cb.ax.tick_params('both', labelsize="large")
+
+#plt.show()
+plt.savefig('../Fig/ColoumbDiamond_Zoom.png')
+
 
 
 
