@@ -36,7 +36,7 @@ tail -n +$STARTLINE $DATALOC/temp_$FILENAME > $DATALOC/temp_$FILENAME.tmp && mv 
 NUMCOL=$(head -n 1 $DATALOC/temp_$FILENAME | awk '{print NF}')
 if [ $NUMCOL -gt 2 ]; then
     echo "Merging columns and sorting according to column 1"
-    awk '{print $1"\t"$2"\n"$3"\t"$4}' $DATALOC/temp_$FILENAME | sort -k1 -nr > $DATALOC/temp_$FILENAME.tmp && mv $DATALOC/temp_$FILENAME.tmp $DATALOC/temp_$FILENAME
+    awk '{print $1"\t"$2"\n"$3"\t"$4}' $DATALOC/temp_$FILENAME | sort -k1 -n > $DATALOC/temp_$FILENAME.tmp && mv $DATALOC/temp_$FILENAME.tmp $DATALOC/temp_$FILENAME
 fi
 
 echo "Substituting tabs with spaces. Resulting file in clean_${FILENAME}"
