@@ -51,6 +51,12 @@ plt.tick_params('both', labelsize="x-large")
 
 plt.plot(energyX523, countsX523)
 
+plt.text(1.43, 10000, "3", fontsize = "x-large")
+plt.text(1.50, 240000, "2", fontsize = "x-large")
+plt.text(1.51, 100000, "1", fontsize = "x-large")
+plt.text(1.73, 160000, "4", fontsize = "x-large")
+plt.text(1.88, 30000, "5", fontsize = "x-large")
+
 plt.savefig('../Fig/PLX523nm.png')
 #plt.show()
 
