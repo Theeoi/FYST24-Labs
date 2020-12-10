@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import matplotlib.pyplot as plt
-import scipy
 import scipy.constants as sp
 import numpy as np
 
@@ -58,8 +57,12 @@ plt.plot(theta, Xe_sqrt, color = 'limegreen', label = "Electron")
 plt.plot(theta, Xlh_sqrt, color = 'forestgreen', label = "Light Hole")
 plt.plot(theta, Xhh_sqrt, color = 'darkgreen', label = "Heavy Hole")
 
+plt.text(1.5, 7, "n = 1", fontsize = "x-large")
+plt.text(3.1, 7, "2", fontsize = "x-large")
+
 plt.ylim(0, 10)
 
+plt.title("Sample X", fontsize = "x-large")
 plt.xlabel(r"$\theta = ka / 2$", fontsize = "xx-large")
 plt.tick_params('both', labelsize="x-large")
 plt.legend(fontsize = "x-large")
@@ -89,8 +92,15 @@ plt.plot(theta, Ye_sqrt, color = 'limegreen', label = "Electron")
 plt.plot(theta, Ylh_sqrt, color = 'forestgreen', label = "Light Hole")
 plt.plot(theta, Yhh_sqrt, color = 'darkgreen', label = "Heavy Hole")
 
+plt.text(1.5, 7, "n = 1", fontsize = "x-large")
+plt.text(3.1, 7, "2", fontsize = "x-large")
+plt.text(4.7, 7, "3", fontsize = "x-large")
+plt.text(6.3, 7, "4", fontsize = "x-large")
+plt.text(7.9, 7, "5", fontsize = "x-large")
+
 plt.ylim(0, 10)
 
+plt.title("Sample Y", fontsize = "x-large")
 plt.xlabel(r"$\theta = ka / 2$", fontsize = "xx-large")
 plt.tick_params('both', labelsize="x-large")
 plt.legend(fontsize = "x-large")
