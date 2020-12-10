@@ -43,7 +43,7 @@ fileY720.close()
 
 ## Plot the data
 
-plt.figure(figsize = (9,6))
+plt.figure(figsize = (10,6))
 
 plt.xlabel("Emission Energy [eV]", fontsize = "xx-large")
 plt.ylabel("Counts [Arb. Unit]", fontsize = "xx-large")
@@ -62,13 +62,17 @@ plt.savefig('../Fig/PLX523nm.png')
 
 # ---
 
-plt.figure(figsize = (9,6))
+plt.figure(figsize = (10,6))
 
 plt.xlabel("Emission Energy [eV]", fontsize = "xx-large")
 plt.ylabel("Counts [Arb. Unit]", fontsize = "xx-large")
 plt.tick_params('both', labelsize="x-large")
 
 plt.plot(energyY523, countsY523)
+
+plt.text(1.46, 20000, "Substrate", fontsize = "x-large", rotation = 45)
+plt.text(1.56, 300000, "4", fontsize = "x-large")
+plt.text(1.96, 30000, "5", fontsize = "x-large")
 
 plt.savefig('../Fig/PLY523nm.png')
 #plt.show()
