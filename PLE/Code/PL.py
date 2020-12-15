@@ -87,6 +87,9 @@ plt.tick_params('both', labelsize="x-large")
 
 plt.plot(energyY720, countsY720)
 
+plt.text(1.51, 2.0e6, "Substrate", fontsize = "x-large", rotation = 45)
+plt.text(1.56, 1.5e6, "QW", fontsize = "x-large", rotation = 45)
+
 plt.savefig('../Fig/PLY720nm.png')
 #plt.show()
 
