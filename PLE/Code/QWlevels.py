@@ -10,6 +10,9 @@ me = 0.067 * sp.m_e
 mlh = 0.082 * sp.m_e
 mhh = 0.5 * sp.m_e
 
+me_b = (0.067 + 0.083 * 0.350) * sp.m_e
+mlh_b = (0.082 + 0.071 * 0.350) * sp.m_e
+
 x_a = 2.5 * sp.nano
 x_Vc = 0.219 * sp.e
 x_Vv = 0.134 * sp.e
@@ -44,8 +47,8 @@ Xe_theta0 = (me * x_Vc * (x_a**2))/(2 * (sp.hbar**2))
 Xlh_theta0 = (mlh * x_Vv * (x_a**2))/(2 * (sp.hbar**2))
 Xhh_theta0 = (mhh * x_Vv * (x_a**2))/(2 * (sp.hbar**2))
 
-Xe_sqrt = np.sqrt((Xe_theta0/(theta**2)) - 1)
-Xlh_sqrt = np.sqrt((Xlh_theta0/(theta**2)) - 1)
+Xe_sqrt = np.sqrt((me_b/me)*((Xe_theta0/(theta**2)) - 1))
+Xlh_sqrt = np.sqrt((mlh_b/mlh)*((Xlh_theta0/(theta**2)) - 1))
 Xhh_sqrt = np.sqrt((Xhh_theta0/(theta**2)) - 1)
 
 plt.figure(figsize = (9,6))
@@ -76,8 +79,8 @@ Ye_theta0 = (me * y_Vc * (y_a**2))/(2 * (sp.hbar**2))
 Ylh_theta0 = (mlh * y_Vv * (y_a**2))/(2 * (sp.hbar**2))
 Yhh_theta0 = (mhh * y_Vv * (y_a**2))/(2 * (sp.hbar**2))
 
-Ye_sqrt = np.sqrt((Ye_theta0/(theta**2)) - 1)
-Ylh_sqrt = np.sqrt((Ylh_theta0/(theta**2)) - 1)
+Ye_sqrt = np.sqrt((me_b/me)*((Ye_theta0/(theta**2)) - 1))
+Ylh_sqrt = np.sqrt((mlh_b/mlh)*((Ylh_theta0/(theta**2)) - 1))
 Yhh_sqrt = np.sqrt((Yhh_theta0/(theta**2)) - 1)
 
 plt.figure(figsize = (9,6))
@@ -98,7 +101,7 @@ plt.text(4.7, 7, "3", fontsize = "x-large")
 plt.text(6.3, 7, "4", fontsize = "x-large")
 plt.text(7.9, 7, "5", fontsize = "x-large")
 
-plt.ylim(0, 10)
+plt.ylim(0, 1.5)
 
 plt.title("Sample Y", fontsize = "x-large")
 plt.xlabel(r"$\theta = ka / 2$", fontsize = "xx-large")
@@ -106,7 +109,7 @@ plt.tick_params('both', labelsize="x-large")
 plt.legend(fontsize = "x-large")
 
 plt.savefig("../Fig/Y_QWlevels.png")
-#plt.show()
+##plt.show()
 
 
 

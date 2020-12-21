@@ -25,10 +25,10 @@ plt.tick_params('both', labelsize="x-large")
 
 plt.plot(energyYPLE, countsYPLE, label = "PLE Spectrum")
 
-plt.vlines(1.559, 1120, 1200, colors = 'm', label = "n = 1") # n1 hh
-plt.vlines(1.578, 1120, 1200, colors = 'm') # n1 lh
-plt.vlines(1.672, 1120, 1200, colors = 'y', label = "n = 2") # n2 hh
-plt.vlines(1.746, 1120, 1200, colors = 'y') # n2 lh
+plt.vlines(1.562, 1120, 1200, colors = 'm', label = "n = 1") # n1 hh
+plt.vlines(1.583, 1120, 1200, colors = 'm') # n1 lh
+plt.vlines(1.679, 1120, 1200, colors = 'y', label = "n = 2") # n2 hh
+plt.vlines(1.756, 1120, 1200, colors = 'y') # n2 lh
 
 #plt.vlines(1.604, 1120, 1200, colors = 'teal') # n13 hh
 #plt.vlines(1.740, 1120, 1200, colors = 'teal') # n24 3h
